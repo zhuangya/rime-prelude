@@ -1,24 +1,19 @@
-# Rime default settings
+# Rime nos settings
 # encoding: utf-8
 
-config_version: '0.40'
+config_version: '0.0.1'
 
 schema_list:
   - schema: luna_pinyin
-  - schema: luna_pinyin_simp
-  - schema: luna_pinyin_fluency
-  - schema: bopomofo
-  - schema: bopomofo_tw
-  - schema: cangjie5
-  - schema: stroke
-  - schema: terra_pinyin
+
+  - schema: luna_pinyin_simp     # 朙月拼音·简化字，可以按 ctrl+` 选择临时启用正體中文
+  - schema: luna_pinyin_fluency  # 语句流
+  - schema: luna_pinyin_tw       # 朙月拼音·臺灣正體，可以按 ctrl+` 選擇臨時啓用简体中文
 
 switcher:
   caption: 〔方案選單〕
   hotkeys:
     - Control+grave
-    - Control+Shift+grave
-    - F4
   save_options:
     - full_shape
     - ascii_punct
@@ -45,7 +40,6 @@ key_binder:
     __patch:
       - key_bindings:/emacs_editing
       - key_bindings:/move_by_word_with_tab
-      - key_bindings:/paging_with_minus_equal
       - key_bindings:/paging_with_comma_period
       - key_bindings:/numbered_mode_switch
 
@@ -58,9 +52,9 @@ recognizer:
 ascii_composer:
   good_old_caps_lock: true
   switch_key:
-    Shift_L: inline_ascii
-    Shift_R: commit_text
-    Control_L: noop
-    Control_R: noop
+    Shift_L: commit_code
+    Shift_R: commit_code
+    Control_L: inline_ascii
+    Control_R: commit_text
     Caps_Lock: clear
     Eisu_toggle: clear
